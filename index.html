@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify - Pemutar Web: Musik untuk semua orang</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="Spotify_Primary_Logo_RGB_Green.ico" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-logo" id="logo">Spotify</div>
+    <nav class="header-menu">
+      <a href="#recentlyplayed">Home</a>
+      <a href="#library">Library</a>
+      <a href="#artists">Top Artists</a>
+    </nav>
+  </header>
+
+ <!-- Top Artists Section -->
+ <section id="artists">
+  <h2>Artists Populer</h2>
+  <div class="artists-grid">
+    <div class="artist-card" id ="artist1">
+      <img src="5.png" alt="Artist 1">
+      <div class="artist-name">LADY GAGA</div>
+    </div>
+    <div class="artist-card" id ="artist2">
+      <img src="3.png" alt="Artist 2">
+      <div class="artist-name">XXTENATIONS</div>
+    </div>
+    <div class="artist-card" id ="artist3">
+      <img src="2.png" alt="Artist 3">
+      <div class="artist-name">Lana Del Rey</div>
+    </div>
+    <div class="artist-card" id ="artist4">
+      <img src="1.png" alt="Artist 4">
+      <div class="artist-name">Shawn mendes</div>
+  </div>
+  <div class="artist-card" id ="artist5">
+    <img src="4.png" alt="Artist 4">
+    <div class="artist-name">Charlie Puth</div>
+</div>
+<div class="artist-card" id ="artist5">
+  <img src="6.png" alt="Artist 4">
+  <div class="artist-name">Aliando</div>
+</div>
+</section>
+
+  <!-- Home Section -->
+  <section id="Recentlyplayed">
+    <h2>Recently Played</h2>
+    <div class="recently-played-grid">
+      <div class="music-card">
+        <img src="m1.png" alt="Song 1">
+        <div class="song-title">Lantas</div>
+        <div class="artist-name">Juicy Luicy</div>
+      </div>
+      <div class="music-card">
+        <img src="m2.png" alt="Song 2">
+        <div class="song-title">SUMMER TIME SADNES</div>
+        <div class="artist-name">Lana Del Rey</div>
+      </div>
+      <div class="music-card">
+        <img src="m3.png" alt="Song 3">
+        <div class="song-title">Interaksi</div>
+        <div class="artist-name">Tulus</div>
+      </div><div class="music-card">
+        <img src="m4.png" alt="Song 3">
+        <div class="song-title">Menari dengan bayangan</div>
+        <div class="artist-name">Hindia</div>
+      </div><div class="music-card">
+        <img src="m4.png" alt="Song 3">
+        <div class="song-title">Fabula</div>
+        <div class="artist-name">mahalini</div>
+      </div><div class="music-card">
+        <img src="m3.png" alt="Song 3">
+        <div class="song-title">Nala</div>
+        <div class="artist-name">Tulus</div>
+    </div>
+  </section>
+
+  <!-- radio Section -->
+  <section id="radio" class="container radio-section">
+    <h2>Radio Populer</h2>
+    <div class="radio-items">
+      <div class="radio-item">
+        <img src="p3.png" alt="Playlist 1">
+        <div>
+          <p class="playlist-name">My Violet</p>
+          <p class="song-count">25 Songs</p>
+        </div>
+      </div>
+      <div class="radio-item">
+        <img src="p1.png" alt="Playlist 2">
+        <div>
+          <p class="playlist-name">DOED Playlist</p>
+          <p class="song-count">40 Songs</p>
+        </div>
+      </div>
+      <div class="radio-item">
+        <img src="p2.png" alt="Playlist 3">
+        <div>
+          <p class="playlist-name">My Shine</p>
+          <p class="song-count">15 Songs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 Spotify</p>
+  </footer>
+
+  <!-- Menampilkan nama artis saat diklik -->
+  <script>
+    document.getElementById("logo").addEventListener("click", function(){
+      alert("Selamat datang di Spotify");
+    });
+
+    document.querySelectorAll('.artist-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const artistName = this.querySelector('.artist-name').textContent;
+      alert("Anda memilih artis: " + artistName);
+    });
+  });
+
+    document.querySelectorAll('.music-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const musicName = this.querySelector('.artist-name').textContent;
+      alert("Anda memilih musik: " + musicName);
+    });
+  });
+
+    document.querySelectorAll('.radio-item').forEach(card => {
+    card.addEventListener('click', function() {
+      const radioName = this.querySelector('.playlist-name').textContent;
+      alert("Anda memilih musik: " + radioName);
+    });
+  });
+
+  const artists = document.getElementsByClassName("artist-card");
+  Array.from(artists).forEach(card => {
+    card.addEventListener("mouseover", function(){
+      card.style.backgroundColor = "#1DB954"
+    });
+    card.addEventListener("mouseout", function(){
+      card.style.backgroundColor = "";
+    })
+  })
+
+  const Recentlyplayed = document.getElementsByClassName("music-card");
+  Array.from(Recentlyplayed).forEach(card => {
+    card.addEventListener("mouseover", function(){
+      card.style.backgroundColor = "#1DB954"
+    });
+    card.addEventListener("mouseout", function(){
+      card.style.backgroundColor = "";
+    })
+  })
+
+  const radioplay = document.getElementsByClassName("radio-item");
+  Array.from(radioplay).forEach(card => {
+    card.addEventListener("mouseover", function(){
+      card.style.backgroundColor = "#1DB954"
+    });
+    card.addEventListener("mouseout", function(){
+      card.style.backgroundColor = "";
+    })
+  })
+
+  </script>
+</body>
+</html>

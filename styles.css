@@ -1,0 +1,134 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1DB954;
+  padding: 20px;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}
+
+.header-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-menu a {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header-menu a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: #181818;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  border-bottom: 2px solid #1DB954;
+  padding-bottom: 10px;
+  color: #1DB954;
+}
+
+.artists-grid, .recently-played-grid, .radio-items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+
+.artists-grid::-webkit-scrollbar{
+  width: 0;
+}
+
+.artist-card, .music-card, .radio-item {
+  background-color: #282828;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* .artist-card:hover, .music-card:hover, .radio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px #1DB954;
+  transition: all 0.3s ease;
+}
+
+.artist-card:hover img, .music-card:hover img, .radio-item:hover img {
+  filter: brightness(1.1);
+} */
+
+
+.music-card img{
+  width: 100%;
+  height: auto;
+}
+
+.artist-card img, .radio-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; 
+}
+
+.artist-name, .song-title, .playlist-name {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.artist-name {
+  font-weight: bold;
+}
+
+.song-count {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.footer {
+  background-color: #1DB954;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .header-menu a {
+      display: block;
+      margin: 5px 0;
+  }
+
+  .artists-grid, .recently-played-grid, .radio-items {
+      flex-direction: column;
+      align-items: center;
+  }
+}
